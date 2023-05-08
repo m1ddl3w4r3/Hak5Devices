@@ -20,8 +20,8 @@ $ShareID = "Share ID"
 $SharePass = "Share Password"
 
 # BashBunny loot folder
-bb = (gwmi win32_volume -f 'label=''BashBunny''').Name
-TARGETDIR = "$bb\loot\ADV-Recon\$env:computername"
+$bb = (gwmi win32_volume -f 'label=''BashBunny''').Name
+$TARGETDIR = "$bb\loot\ADV-Recon\$env:computername"
 
 #Use This For Testing
 #$TARGETDIR =  "$env:USERPROFILE\Desktop\$env:COMPUTERNAME" 
