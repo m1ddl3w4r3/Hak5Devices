@@ -1,12 +1,10 @@
-# ADV-Recon
+# ADV_Recon
 
 A script used to do an advanced level of Recon on the targets computer and upload results to the cloud for faster deployments.
 
 ## Description
 
-This program enumerates a target PC to include Operating System, RAM Capacity, Public IP, and Email associated with microsoft account.
-The SSID and WiFi password of any current or previously connected to networks.
-Intel on the system Info, HDDs, network interfaces, TCP connections, Processes, Services, Installed software and drivers 
+This program enumerates a target PC and uploads the results to BB and Nextcloud Server. 
 
 ## Getting Started
 
