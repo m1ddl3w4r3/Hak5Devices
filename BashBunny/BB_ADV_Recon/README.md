@@ -26,7 +26,7 @@ Plug it into client computer. \
 
 All contributors names will be listed here
 
-m1ddl3w4r3
+m1ddl3w4r3 \
 I am Jakoby
 
 
