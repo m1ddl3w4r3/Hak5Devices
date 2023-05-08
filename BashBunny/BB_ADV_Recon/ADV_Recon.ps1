@@ -6,7 +6,9 @@
     Comment out the Nextcloud settings to use the bunny upload (Default is Nextcloud Upload for speed of deployment.)
     Change the TARGETDIR variable and FileName variables to suite your needs.
     
-    WARNING: This script is meant to deploy the script and be removed. I have left the functionality of write back to Bash Bunny if you want it, Just uncomment the lines in exfil section below.
+    WARNING: This script is meant to deploy the script and be removed.
+    I have left the functionality of write back to Bash Bunny if you want it. 
+    But, the scripts takes approx 1 min to complete and LED will switch to finished after its deployed, not on write back to bunny.
 
     NOT OPSEC SAFE
     ##############
