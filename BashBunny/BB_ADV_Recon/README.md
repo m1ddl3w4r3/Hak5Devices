@@ -8,9 +8,9 @@ This program enumerates a target PC and uploads the results to BB and Nextcloud 
 
 ## Getting Started
 
-Edit ADV_Recon.ps1 to your liking.
-Upload entire folder to bashbunny switch position of your choosing.
-Plug it into client computer.
+Edit ADV_Recon.ps1 to your liking. \
+Upload entire folder to bashbunny switch position of your choosing. \
+Plug it into client computer. \
 (Because we have permission right?.... Right?)
 
 ### Dependencies
