@@ -27,6 +27,7 @@ Plug it into client computer. \
 All contributors names will be listed here
 
 m1ddl3w4r3 \
+fightnerd \
 I am Jakoby
 
 
