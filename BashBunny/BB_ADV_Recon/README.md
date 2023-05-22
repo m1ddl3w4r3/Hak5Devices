@@ -35,6 +35,7 @@ I am Jakoby
 
 * 0.1
     * Initial Release
+* 0.2 Added clipboard history
 
 ## Acknowledgments
 
