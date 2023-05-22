@@ -1,6 +1,6 @@
 <#
     .NOTES
-    Version 0.1
+    Version 0.2
     Written By: m1ddl3w4r3
     This script can be used via the bashbunny and upload loot back to the bunny or a Nextcloud Server.
     Comment out the Nextcloud settings to use the bunny upload (Default is Nextcloud Upload for speed of deployment.)
