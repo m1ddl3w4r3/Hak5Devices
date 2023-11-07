@@ -20,7 +20,7 @@ Plug it into client computer. \
 ### Executing program
 
 * Plug in your device
-* Command will be entered in the RunBox to start the ADV_Recon script
+* Command will be entered in the system level powershell window.
 
 ## Contributing
 
