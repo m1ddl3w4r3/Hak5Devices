@@ -1,6 +1,6 @@
-REM --> TITLE Download and Execute
+REM --> TITLE Command as System
 REM --> AUTHOR m1ddl3w4r3
-REM --> DESCRIPTION Will create a system level powershell process and run the exe provided.
+REM --> DESCRIPTION Will create a system level powershell process and run the command provided.
 ATTACKMODE HID VID_0000 PID_0000 MAN_name PROD_name SERIAL_000000000000
 
 REM --> Variable is the thing you want to run as system. (Defaults to whoami for test)
