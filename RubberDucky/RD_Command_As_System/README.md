@@ -1,10 +1,14 @@
 # Command_As_System
 
-
 ## Description
 
-A script used to run anything you want as system. 
-
+Will create a system level powershell process and run the command provided. 
+NOTES:
+	- Assumes user has local admin access.
+	- Assumes UAC is set to always notify. but will work either way.
+	- Will create a scheduled task to elevate.
+	- Will download mkellerman's Invoke-CommandAs repo from github.
+	
 ## Getting Started
 
 Edit payload.txt to your liking. \
@@ -36,3 +40,5 @@ m1ddl3w4r3
     * Initial Release
 
 ## Acknowledgments
+
+mkellerman - https://github.com/mkellerman/Invoke-CommandAs.git
