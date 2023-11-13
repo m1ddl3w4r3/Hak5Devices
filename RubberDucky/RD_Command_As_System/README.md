@@ -1,17 +1,24 @@
 # Command_As_System
 
 ## Description
+Will create a system level powershell process and run the command provided.
 
-Will create a system level powershell process and run the command provided. 
-NOTES:
+##NOTES:
 	- Assumes user has local admin access.
 	- Assumes UAC is set to always notify. but will work either way.
+```
+	- Replace example.com with --> Code below hosetd on your own infrastructure (Github is not a CDN for deployments)
+https://raw.githubusercontent.com/mkellerman\/Invoke-CommandAs/master/Invoke-CommandAs/
+```
+	- This is to make sure you read the stuff you run. and to comply with the hak5 TOS regarding staged payloads.
+
+##OPSEC:
 	- Will create a scheduled task to elevate.
 	- Will download mkellerman's Invoke-CommandAs repo from github.
-	
+
 ## Getting Started
 
-Edit payload.txt to your liking. \
+Edit payload.txt to your liking. (SEE ABOVE) \
 Upload payload.txt to payload studio and generate the payload. 
 Copy inject.bin to the root of RuberDucky. \
 Plug it into client computer. \
@@ -31,8 +38,6 @@ Plug it into client computer. \
 All contributors names will be listed here
 
 m1ddl3w4r3
-
-
 
 ## Version History
 
