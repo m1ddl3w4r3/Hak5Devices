@@ -3,17 +3,20 @@
 ## Description
 Will create a system level powershell process and run the command provided.
 
-##NOTES:
-	- Assumes user has local admin access.
-	- Assumes UAC is set to always notify. but will work either way.
+##NOTES: \
+	- Assumes user has local admin access. \
+	- Assumes UAC is set to always notify. but will work either way. \
+	- This is to make sure you read the stuff you run. and to comply with the hak5 TOS regarding staged payloads.
 ```
-	- Replace example.com with --> Code below hosetd on your own infrastructure (Github is not a CDN for deployments)
+	- Replace example.com with code below hosetd on your own infrastructure (Github is not a CDN for deployments)
 https://raw.githubusercontent.com/mkellerman\/Invoke-CommandAs/master/Invoke-CommandAs/
 ```
-	- This is to make sure you read the stuff you run. and to comply with the hak5 TOS regarding staged payloads.
 
-##OPSEC:
-	- Will create a scheduled task to elevate.
+	
+
+
+##OPSEC: \
+	- Will create a scheduled task to elevate. \
 	- Will download mkellerman's Invoke-CommandAs repo from github.
 
 ## Getting Started
